@@ -1,0 +1,4 @@
+MacOs dark mode background is #313132
+You will need to update the filepaths to the two images
+hopefully tk.Button works the same as tkmacos.Button
+This is for windows
