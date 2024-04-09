@@ -1,7 +1,6 @@
 import tkinter as tk
 import custom_widgets
 import stream_overlay
-from tkmacosx import Button
 from PIL import Image, ImageTk
 
 
@@ -29,13 +28,13 @@ class mainGUI:
         self.p2_team = custom_widgets.EntryWithPlaceholder(master=self.root,placeholder="Team")
         self.p2_team.place(x=548, y=60, width=50)
 
-        self.update = Button(self.root, text="Update Display", font=("Copperplate", 20), fg='white', bg='#6110b3', command=self.update_display)
+        self.update = tk.tk.Button(self.root, text="Update Display", font=("Copperplate", 20), fg='white', bg='#6110b3', command=self.update_display)
         self.update.place(x=304, y=460)
 
-        self.reset = Button(self.root, text="Reset All", font=("Copperplate", 15), fg='white', bg='#6110b3', command=self.reset_text)
+        self.reset = tk.tk.Button(self.root, text="Reset All", font=("Copperplate", 15), fg='white', bg='#6110b3', command=self.reset_text)
         self.reset.place(x=675,y=10)
 
-        self.reset = Button(self.root, text="New Set", font=("Copperplate", 15), fg='white', bg='#6110b3', command=self.reset_set)
+        self.reset = tk.tk.Button(self.root, text="New Set", font=("Copperplate", 15), fg='white', bg='#6110b3', command=self.reset_set)
         self.reset.place(x=560, y=10)
 
         self.p1_games = custom_widgets.EntryWithPlaceholder(master=self.root, placeholder="0")
@@ -44,25 +43,25 @@ class mainGUI:
         self.p2_games = custom_widgets.EntryWithPlaceholder(master=self.root, placeholder="0")
         self.p2_games.place(x=765, y=87, width=25)
 
-        self.p1_plus = Button(self.root, text="+", font=("Copperplate", 24), fg='white', bg='#6110b3', command=self.p1_plus_clicked)
+        self.p1_plus = tk.tk.Button(self.root, text="+", font=("Copperplate", 24), fg='white', bg='#6110b3', command=self.p1_plus_clicked)
         self.p1_plus.place(x=155, y=87, width=35, height=25)
 
-        self.p1_minus = Button(self.root, text="-", font=("Copperplate", 24), fg='white', bg='#6110b3', command=self.p1_minus_clicked)
+        self.p1_minus = tk.tk.Button(self.root, text="-", font=("Copperplate", 24), fg='white', bg='#6110b3', command=self.p1_minus_clicked)
         self.p1_minus.place(x=192, y=87, width=35, height=25)
 
-        self.p2_plus = Button(self.root, text="+", font=("Copperplate", 24), fg='white', bg='#6110b3', command=self.p2_plus_clicked)
+        self.p2_plus = tk.tk.Button(self.root, text="+", font=("Copperplate", 24), fg='white', bg='#6110b3', command=self.p2_plus_clicked)
         self.p2_plus.place(x=692, y=87, width=35, height=25)
 
-        self.p2_minus = Button(self.root, text="-", font=("Copperplate", 24), fg='white', bg='#6110b3', command=self.p2_minus_clicked)
+        self.p2_minus = tk.tk.Button(self.root, text="-", font=("Copperplate", 24), fg='white', bg='#6110b3', command=self.p2_minus_clicked)
         self.p2_minus.place(x=728, y=87, width=35, height=25)
 
         self.round = custom_widgets.EntryWithPlaceholder(master=self.root, placeholder="Round")
         self.round.place(x=10, y=435)
 
-        self.bo3 = Button(self.root, text="Bo3", font=("Copperplate", 16), fg='white', bg='#6110b3', command=self.bo3_clicked)
+        self.bo3 = tk.tk.Button(self.root, text="Bo3", font=("Copperplate", 16), fg='white', bg='#6110b3', command=self.bo3_clicked)
         self.bo3.place(x=10, y=470, height=25, width=70)
 
-        self.bo5 = Button(self.root, text="Bo5", font=("Copperplate", 16), fg='white', bg='gray', command=self.bo5_clicked)
+        self.bo5 = tk.tk.Button(self.root, text="Bo5", font=("Copperplate", 16), fg='white', bg='gray', command=self.bo5_clicked)
         self.bo5.place(x=80, y=470, height=25, width=70)
 
         self.is_bo3 = True
@@ -76,7 +75,7 @@ class mainGUI:
         self.tournament_name = custom_widgets.EntryWithPlaceholder(master=self.root, placeholder="Tournament Name")
         self.tournament_name.place(x=10,y=405)
 
-        self.notice = tk.Label(self.root, text="ALL of the purple buttons update the stream (except the resets).", font=("Copperplate", 11))
+        self.notice = tk.Label(self.root, text="ALL of the purple tk.tk.Buttons update the stream (except the resets).", font=("Copperplate", 11))
         self.notice.place(x=235, y=430)
 
         self.c1 = custom_widgets.EntryWithPlaceholder(master=self.root, placeholder="Commentator 1 Tag")
@@ -93,7 +92,7 @@ class mainGUI:
 
         self.check_state = tk.IntVar()
 
-        self.idiot_box = tk.Checkbutton(self.root, text="Remove GUI Text Filters (on stream)", font=("Copperplate", 11), variable=self.check_state)
+        self.idiot_box = tk.Checktk.tk.Button(self.root, text="Remove GUI Text Filters (on stream)", font=("Copperplate", 11), variable=self.check_state)
         self.idiot_box.place(x=5,y=5)
 
     def reset_text(self):
@@ -183,11 +182,11 @@ class mainGUI:
             pass
         else:
             self.bo3.destroy()
-            self.bo3 = Button(self.root, text="Bo3", font=("Copperplate", 16), fg='white', bg='#6110b3', command=self.bo3_clicked)
+            self.bo3 = tk.tk.Button(self.root, text="Bo3", font=("Copperplate", 16), fg='white', bg='#6110b3', command=self.bo3_clicked)
             self.bo3.place(x=10, y=470, height=25, width=70)
 
             self.bo5.destroy()
-            self.bo5 = Button(self.root, text="Bo5", font=("Copperplate", 16), fg='white', bg='gray',command=self.bo5_clicked)
+            self.bo5 = tk.tk.Button(self.root, text="Bo5", font=("Copperplate", 16), fg='white', bg='gray',command=self.bo5_clicked)
             self.bo5.place(x=80, y=470, height=25, width=70)
 
             self.is_bo3 = True
@@ -199,11 +198,11 @@ class mainGUI:
             pass
         else:
             self.bo3.destroy()
-            self.bo3 = Button(self.root, text="Bo3", font=("Copperplate", 16), fg='white', bg='gray', command=self.bo3_clicked)
+            self.bo3 = tk.tk.Button(self.root, text="Bo3", font=("Copperplate", 16), fg='white', bg='gray', command=self.bo3_clicked)
             self.bo3.place(x=10, y=470, height=25, width=70)
 
             self.bo5.destroy()
-            self.bo5 = Button(self.root, text="Bo5", font=("Copperplate", 16), fg='white', bg='#6110b3', command=self.bo5_clicked)
+            self.bo5 = tk.tk.Button(self.root, text="Bo5", font=("Copperplate", 16), fg='white', bg='#6110b3', command=self.bo5_clicked)
             self.bo5.place(x=80, y=470, height=25, width=70)
 
             self.is_bo3 = False
